@@ -20,7 +20,6 @@ public class Role extends BaseEntity {
     public String toString() {
         return "Role{" +
                 "name='" + name + '\'' +
-                ", user="  +
-                '}';
+                ", user="  + '}';
     }
 }

@@ -1,6 +1,7 @@
 package com.example.restapis3v1.service;
 
 import com.example.restapis3v1.model.File;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -8,13 +9,14 @@ public interface FileService {
 
     File findByName(String name);
 
-    File upload(File file);
+    String upload(MultipartFile file);
 
-    void download(Long id);
+    byte[] download(String filename);
 
     List<File> getAll();
 
-    void delete(Long id);
+    void deleteByName(String name);
+
 
 
 

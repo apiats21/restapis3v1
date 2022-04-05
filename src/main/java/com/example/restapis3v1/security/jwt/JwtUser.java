@@ -1,13 +1,11 @@
 package com.example.restapis3v1.security.jwt;
 
-import com.example.restapis3v1.model.File;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 import java.util.Date;
-import java.util.List;
 
 public class JwtUser implements UserDetails {
 

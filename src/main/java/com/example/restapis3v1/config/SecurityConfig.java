@@ -17,6 +17,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     private static final String ADMIN_ENDPOINT = "/api/v1/admin/**";
     private static final String LOGIN_ENDPOINT = "/api/v1/auth/login";
+    private static final String ADMIN_FILE_ENDPOINT = "/api/v1/files/**";
+    private static final String MODERATOR_FILE_UPLOAD = "/api/v1/files/upload/**";
+    private static final String MODERATOR_FILE_DOWNLOAD = "/api/v1/files/download/**";
+    private static final String USER_FILE_BY_NAME = "/api/v1/files/findbyname/**";
+    private static final String USER_ALL_FILES = "/api/v1/files/getall/**";
 
     @Autowired
     public SecurityConfig(JwtTokenProvider jwtTokenProvider) {
@@ -38,8 +43,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .authorizeRequests()
                 .antMatchers(LOGIN_ENDPOINT).permitAll()
-                .antMatchers("/api/v1/files/**").permitAll()
                 .antMatchers(ADMIN_ENDPOINT).hasRole("ADMIN")
+                .antMatchers(ADMIN_FILE_ENDPOINT).hasRole("ADMIN")
+                .antMatchers(MODERATOR_FILE_UPLOAD).hasRole("MODERATOR")
+                .antMatchers(MODERATOR_FILE_DOWNLOAD).hasRole("MODERATOR")
+                .antMatchers(USER_FILE_BY_NAME).hasRole("USER")
+                .antMatchers(USER_ALL_FILES).hasRole("USER")
                 .anyRequest().authenticated()
                 .and()
                 .apply(new JwtConfigurer(jwtTokenProvider));
