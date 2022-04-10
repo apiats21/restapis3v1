@@ -1,6 +1,7 @@
 package com.example.restapis3v1.model;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import lombok.Builder;
 import lombok.Data;
 import org.springframework.data.annotation.LastModifiedDate;
 

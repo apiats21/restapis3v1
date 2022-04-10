@@ -8,10 +8,10 @@
         <version>2.1.4.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>net.proselyte</groupId>
-    <artifactId>jwtappdemo</artifactId>
+    <groupId>com.example</groupId>
+    <artifactId>restapis3v1</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>JwtAppDemo</name>
+    <name>RestApiS3v1</name>
     <description>JWT based spring security REST API</description>
 
     <properties>
@@ -20,6 +20,7 @@
         <jsonwebtoken.version>0.8.0</jsonwebtoken.version>
         <aws-java-sdk-s3.version>1.12.191</aws-java-sdk-s3.version>
         <postgresql.version>42.2.5</postgresql.version>
+        <lombok.version>1.18.22</lombok.version>
     </properties>
 
     <dependencyManagement>
@@ -79,8 +80,10 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <optional>true</optional>
+            <version>${lombok.version}</version>
+            <scope>provided</scope>
         </dependency>
+
 
         <!-- PostgreSQL -->
         <dependency>
@@ -100,6 +103,14 @@
             <artifactId>spring-security-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <!--JUnit -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>5.8.2</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -107,6 +118,22 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.2</version>
             </plugin>
         </plugins>
     </build>

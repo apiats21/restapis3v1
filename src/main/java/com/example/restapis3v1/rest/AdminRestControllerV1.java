@@ -33,7 +33,6 @@ public class AdminRestControllerV1 {
         user.setCreated(new Date());
         user.setUpdated(new Date());
 
-
         userService.register(user);
         UserDto result = UserDto.fromUser(user);
 
@@ -45,7 +44,6 @@ public class AdminRestControllerV1 {
         userService.delete(id);
 
         return "User deleted";
-
     }
 
     @GetMapping(value = "users/all")
