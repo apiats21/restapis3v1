@@ -1,8 +1,14 @@
 language: java
-
 sudo: false
+script: mvn clean verify
 
-script:
-    - java --version
-    - ./mvnw clean install
-    - ./mvnw test
+
+
+#language: java
+#
+#sudo: false
+#
+#script:
+#    - java --version
+#    - ./mvnw clean install
+#    - ./mvnw test
