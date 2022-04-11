@@ -2,4 +2,15 @@ language: java
 sudo: false
 before_install:
     - chmod +x mvnw
-script: mvn clean verify
+
+branches:
+    only:
+        - master
+
+deploy:
+    provider: heroku
+    app: restapis3v1
+    api_key:
+        secure: 8266438d-b288-4750-b6ba-bff6e57a3242
+
+#script: mvn clean verify
