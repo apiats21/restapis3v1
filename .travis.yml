@@ -13,6 +13,6 @@ deploy:
     provider: heroku
     app: restapis3v1
     api_key:
-        secure: 8266438d-b288-4750-b6ba-bff6e57a3242
+        secure: "c3dcf06f-d475-4370-9a23-eba2197be309"
 
 script: mvn clean verify
