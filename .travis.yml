@@ -1,18 +1,15 @@
 language: java
 sudo: false
 before_install:
-    - chmod +x mvnw
-
+- chmod +x mvnw
 branches:
-    only:
-        - master
-
+  only:
+  - master
 before_deploy:
-    - rvm $(travis_internal_ruby) --fuzzy do ruby -S gem install faraday -v 1.8.0
+- rvm $(travis_internal_ruby) --fuzzy do ruby -S gem install faraday -v 1.8.0
 deploy:
-    provider: heroku
-    app: restapis3v1
-    api_key:
-        secure: "c3dcf06f-d475-4370-9a23-eba2197be309"
-
+  provider: heroku
+  app: restapis3v1
+  api_key:
+    secure: PtG9j0jUzTGQShYkq38OOSAZsiGW6RotYnDz0eriOOb9d0kRqJB0QOILChSXlCVePp8IBqlHZxq+WK8MTHNmfbNe6ygi+DrWhv3L7LRKewPUJO6Ukye/RT0b/8vOH7A6bSo/3NSQ8GpuSJszqcR4HbHYatVRpd3yl2XyT3PLWz29X/C+yXiVm0x7y5cI7gWqHeDydxhz3iAKHKsMFekhpDFQAZEBwN9K5iGthQvGOhX/2nqe4xMXmUPeeuJUj1FDvEjaLBoZFEMq/HmAlESxYk3HHBcxmhrizV6mepTFgM229bJ6WVKB4u068jxgyTHKSJWOwMmqA/Oku694wB8VaDzDdONiUPictfbZQYZqY0y2cD3IHiFyYhnUDQffL7JoKLbPdxTkeILVwuyrFKY6x3yRtihKu8zS6XuNbW34N7FTriAY5+NpuTS2QFB7OPEbLFIBAuQViPlFr3G+Sm/QByXHho6pC9poNw/Z47LPxsmJ8r30RzOOhjz11oSswI6XFrUqyMNUsHV44wN+vKOxkS72S4gSPI6JuEdvQpCzW9p9MNMKAH6BPvblJPrpq4iGpV9SVnWBYrIZwfyC4uoQnV6aAHp7uyyzZWNEq5jTK2kWWJgRbQgh7u0HHNIiX1p69SP6/u/DFHYCmg+gFHKWHHp017jam9RZZc7ZvYkB8DU=
 script: mvn clean verify
