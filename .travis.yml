@@ -13,4 +13,4 @@ deploy:
     api_key:
         secure: 8266438d-b288-4750-b6ba-bff6e57a3242
 
-#script: mvn clean verify
+script: mvn clean verify
