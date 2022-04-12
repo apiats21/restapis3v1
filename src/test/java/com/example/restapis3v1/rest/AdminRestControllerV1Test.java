@@ -6,6 +6,7 @@ import com.example.restapis3v1.security.jwt.JwtTokenProvider;
 import com.example.restapis3v1.service.UserService;
 
 import org.junit.Ignore;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,7 +48,7 @@ class AdminRestControllerV1Test {
 
     }
 
-    @Ignore
+    @Disabled
     @Test
     void create() throws Exception {
         User user = new User();
@@ -57,7 +58,6 @@ class AdminRestControllerV1Test {
         String url = "/api/v1/admin/users/create";
 
         mockMvc.perform(MockMvcRequestBuilders.post(url)).andExpect(status().isOk());
-
     }
 
     @Test
