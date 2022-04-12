@@ -47,18 +47,18 @@ class AdminRestControllerV1Test {
 
     }
 
-//    @Ignore
-//    @Test
-//    void create() throws Exception {
-//        User user = new User();
-//
-//        Mockito.when(userService.register(user)).thenReturn(user);
-//
-//        String url = "/api/v1/admin/users/create";
-//
-//        mockMvc.perform(MockMvcRequestBuilders.post(url)).andExpect(status().isOk());
-//
-//    }
+    @Ignore
+    @Test
+    void create() throws Exception {
+        User user = new User();
+
+        Mockito.when(userService.register(user)).thenReturn(user);
+
+        String url = "/api/v1/admin/users/create";
+
+        mockMvc.perform(MockMvcRequestBuilders.post(url)).andExpect(status().isOk());
+
+    }
 
     @Test
     void delete() throws Exception {
