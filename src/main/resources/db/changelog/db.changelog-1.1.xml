@@ -3,7 +3,7 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
 
-    <changeSet id="1.1.0" author="andrei.piatsevich">
+    <changeSet id="1.1.6" author="andrei.piatsevich">
         <createTable tableName="files">
 
             <column name="id" type="BIGINT" autoIncrement="true">

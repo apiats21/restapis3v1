@@ -21,6 +21,7 @@
         <aws-java-sdk-s3.version>1.12.191</aws-java-sdk-s3.version>
         <postgresql.version>42.2.5</postgresql.version>
         <lombok.version>1.18.22</lombok.version>
+<!--        <liquibase-core.version>3.</liquibase-core.version>-->
     </properties>
 
     <dependencyManagement>
@@ -64,6 +65,7 @@
         </dependency>
 
         <!-- Liquibase -->
+
         <dependency>
             <groupId>org.liquibase</groupId>
             <artifactId>liquibase-core</artifactId>
